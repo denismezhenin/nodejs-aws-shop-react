@@ -27,12 +27,7 @@ const queryClient = new QueryClient({
   },
 });
 
-if (import.meta.env.DEV) {
-  const { worker } = await import("./mocks/browser");
-  worker.start({ onUnhandledRequest: "bypass" });
-}
 
-console.log("new deployment");
 const container = document.getElementById("app");
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const root = createRoot(container!);
